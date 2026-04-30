@@ -222,7 +222,7 @@ export function FontCustomization({ settings, onChange }: FontCustomizationProps
                     onClick={() => setShowUserFontDialog(!showUserFontDialog)}
                   >
                     <Plus className="size-4 mr-1" />
-                    Add User
+                    Add User Font
                   </Button>
                 </div>
 

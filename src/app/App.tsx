@@ -126,7 +126,7 @@ export default function App() {
               </div>
               <div>
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Chat Widget Plugin Builder
+                  Text Chat Widget Plugin Builder
                 </h1>
                 <p className="text-sm text-muted-foreground flex items-center gap-1.5 mt-1">
                   <Sparkles className="size-3.5" />
@@ -156,11 +156,11 @@ export default function App() {
               <CardContent>
                 <Tabs defaultValue="room" className="w-full">
                   <TabsList className="grid w-full grid-cols-5 mb-6">
-                    <TabsTrigger value="room">Room</TabsTrigger>
-                    <TabsTrigger value="moderation">Mod</TabsTrigger>
-                    <TabsTrigger value="translation">Trans</TabsTrigger>
-                    <TabsTrigger value="fonts">Font</TabsTrigger>
-                    <TabsTrigger value="emoji">Emoji</TabsTrigger>
+                    <TabsTrigger value="room">Room Configure</TabsTrigger>
+                    <TabsTrigger value="moderation">Moderation</TabsTrigger>
+                    <TabsTrigger value="translation">Translation</TabsTrigger>
+                    <TabsTrigger value="fonts">Fonts</TabsTrigger>
+                    <TabsTrigger value="emoji">Emoji's</TabsTrigger>
                   </TabsList>
 
                   <ScrollArea className="h-[calc(100vh-320px)] pr-4">

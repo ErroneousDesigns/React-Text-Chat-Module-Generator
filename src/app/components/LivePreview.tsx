@@ -140,7 +140,7 @@ export const LivePreview = ({ config }: LivePreviewProps) => {
   };
 
   return (
-    <Card className="h-full flex flex-col">
+    <Card className="size-auto flex flex-col">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -158,7 +158,7 @@ export const LivePreview = ({ config }: LivePreviewProps) => {
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="flex-1 flex flex-col min-h-0 p-4">
+      <CardContent className="size-auto flex-1 flex flex-col">
         <div className="chat-widget-preview h-full max-w-full flex flex-col border rounded-xl overflow-hidden shadow-lg bg-white">
           {/* Header */}
           <div className="chat-header p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white">
