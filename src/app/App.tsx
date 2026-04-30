@@ -126,11 +126,11 @@ export default function App() {
               </div>
               <div>
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Text Chat Widget Plugin Builder
+                  Text Chat Module (Plugin) Builder
                 </h1>
                 <p className="text-sm text-muted-foreground flex items-center gap-1.5 mt-1">
                   <Sparkles className="size-3.5" />
-                  Configure, preview, and export embeddable chat widgets for any React website
+                  Configure, preview, and export embeddable text chat module's for any React website
                 </p>
               </div>
             </div>
@@ -147,10 +147,10 @@ export default function App() {
               <CardHeader>
                 <div className="flex items-center gap-2">
                   <Settings className="size-5 text-primary" />
-                  <CardTitle>Widget Configuration</CardTitle>
+                  <CardTitle>Module Configuration</CardTitle>
                 </div>
                 <CardDescription>
-                  Customize your chat widget with moderation, translation, fonts, and more
+                  Customize your text chat module with moderation, translation, fonts, and more
                 </CardDescription>
               </CardHeader>
               <CardContent>

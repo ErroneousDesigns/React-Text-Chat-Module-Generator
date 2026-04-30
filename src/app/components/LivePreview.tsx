@@ -148,7 +148,7 @@ export const LivePreview = ({ config }: LivePreviewProps) => {
             <div>
               <CardTitle>Live Preview</CardTitle>
               <CardDescription className="text-xs mt-1">
-                Interactive widget preview with your settings
+                Interactive module preview with your settings
               </CardDescription>
             </div>
           </div>
