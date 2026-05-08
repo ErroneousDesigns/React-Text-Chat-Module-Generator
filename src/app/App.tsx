@@ -1,6 +1,17 @@
 import { useState, useEffect } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/ui/card";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "./components/ui/tabs";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { ScrollArea } from "./components/ui/scroll-area";
 import { RoomSettings } from "./components/RoomSettings";
@@ -11,7 +22,12 @@ import { EmojiGifSettings } from "./components/EmojiGifSettings";
 import { CodeViewer } from "./components/CodeViewer";
 import { LivePreview } from "./components/LivePreview";
 import { PluginExporter } from "./components/PluginExporter";
-import { generateWidgetCode, generateCSSCode, generatePackageJson, generateReadme } from "./components/CodeGenerator";
+import {
+  generateWidgetCode,
+  generateCSSCode,
+  generatePackageJson,
+  generateReadme,
+} from "./components/CodeGenerator";
 import { Settings, Code, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
@@ -35,12 +51,13 @@ export default function App() {
     bannedWords: ["spam", "scam", "phishing"],
   });
 
-  const [translationSettings, setTranslationSettings] = useState({
-    enableClickToTranslate: true,
-    autoDetectLanguage: true,
-    defaultLanguage: "en",
-    enabledLanguages: ["en", "es", "fr", "de", "ja", "zh"],
-  });
+  const [translationSettings, setTranslationSettings] =
+    useState({
+      enableClickToTranslate: true,
+      autoDetectLanguage: true,
+      defaultLanguage: "en",
+      enabledLanguages: ["en", "es", "fr", "de", "ja", "zh"],
+    });
 
   const [fontSettings, setFontSettings] = useState({
     enableCustomFonts: true,
@@ -53,7 +70,11 @@ export default function App() {
     usernameColor: "#6366f1",
     customUserFonts: [
       { username: "admin", font: "impact", color: "#dc2626" },
-      { username: "moderator", font: "verdana", color: "#059669" },
+      {
+        username: "moderator",
+        font: "verdana",
+        color: "#059669",
+      },
     ],
   });
 
@@ -74,11 +95,20 @@ export default function App() {
   };
 
   const updateModerationSetting = (key: string, value: any) => {
-    setModerationSettings((prev) => ({ ...prev, [key]: value }));
+    setModerationSettings((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
   };
 
-  const updateTranslationSetting = (key: string, value: any) => {
-    setTranslationSettings((prev) => ({ ...prev, [key]: value }));
+  const updateTranslationSetting = (
+    key: string,
+    value: any,
+  ) => {
+    setTranslationSettings((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
   };
 
   const updateFontSetting = (key: string, value: any) => {
@@ -97,10 +127,11 @@ export default function App() {
     emojiGif: emojiGifSettings,
   });
 
-  const [generatedJsCode, setGeneratedJsCode] = useState('');
-  const [generatedCssCode, setGeneratedCssCode] = useState('');
-  const [generatedPackageJson, setGeneratedPackageJson] = useState('');
-  const [generatedReadme, setGeneratedReadme] = useState('');
+  const [generatedJsCode, setGeneratedJsCode] = useState("");
+  const [generatedCssCode, setGeneratedCssCode] = useState("");
+  const [generatedPackageJson, setGeneratedPackageJson] =
+    useState("");
+  const [generatedReadme, setGeneratedReadme] = useState("");
 
   useEffect(() => {
     const config = getFullConfig();
@@ -108,7 +139,13 @@ export default function App() {
     setGeneratedCssCode(generateCSSCode(config));
     setGeneratedPackageJson(generatePackageJson());
     setGeneratedReadme(generateReadme(config));
-  }, [roomSettings, moderationSettings, translationSettings, fontSettings, emojiGifSettings]);
+  }, [
+    roomSettings,
+    moderationSettings,
+    translationSettings,
+    fontSettings,
+    emojiGifSettings,
+  ]);
 
   const handleExportZip = () => {
     toast.success("Plugin exported successfully!");
@@ -130,7 +167,8 @@ export default function App() {
                 </h1>
                 <p className="text-sm text-muted-foreground flex items-center gap-1.5 mt-1">
                   <Sparkles className="size-3.5" />
-                  Configure, preview, and export embeddable text chat module's for any React website
+                  Configure, preview, and export embeddable text
+                  chat module's for any React website
                 </p>
               </div>
             </div>
@@ -150,32 +188,50 @@ export default function App() {
                   <CardTitle>Module Configuration</CardTitle>
                 </div>
                 <CardDescription>
-                  Customize your text chat module with moderation, translation, fonts, and more
+                  Customize your text chat module with
+                  moderation, translation, fonts, and more
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Tabs defaultValue="room" className="w-full">
                   <TabsList className="grid h-full w-full grid-cols-5 mb-6">
                     <TabsTrigger value="room">Room</TabsTrigger>
-                    <TabsTrigger value="moderation">Moderation</TabsTrigger>
-                    <TabsTrigger value="translation">Translation</TabsTrigger>
-                    <TabsTrigger value="fonts">Fonts</TabsTrigger>
-                    <TabsTrigger value="emoji">Emoji's</TabsTrigger>
+                    <TabsTrigger value="moderation">
+                      Moderation
+                    </TabsTrigger>
+                    <TabsTrigger value="translation">
+                      Translation
+                    </TabsTrigger>
+                    <TabsTrigger value="fonts">
+                      Fonts
+                    </TabsTrigger>
+                    <TabsTrigger value="emoji">
+                      Emoji's
+                    </TabsTrigger>
                   </TabsList>
 
                   <ScrollArea className="h-full pr-4">
                     <TabsContent value="room" className="mt-0">
-                      <RoomSettings settings={roomSettings} onChange={updateRoomSetting} />
+                      <RoomSettings
+                        settings={roomSettings}
+                        onChange={updateRoomSetting}
+                      />
                     </TabsContent>
 
-                    <TabsContent value="moderation" className="mt-0">
+                    <TabsContent
+                      value="moderation"
+                      className="mt-0"
+                    >
                       <ModerationPanel
                         settings={moderationSettings}
                         onChange={updateModerationSetting}
                       />
                     </TabsContent>
 
-                    <TabsContent value="translation" className="mt-0">
+                    <TabsContent
+                      value="translation"
+                      className="mt-0"
+                    >
                       <TranslationSettings
                         settings={translationSettings}
                         onChange={updateTranslationSetting}
@@ -183,7 +239,10 @@ export default function App() {
                     </TabsContent>
 
                     <TabsContent value="fonts" className="mt-0">
-                      <FontCustomization settings={fontSettings} onChange={updateFontSetting} />
+                      <FontCustomization
+                        settings={fontSettings}
+                        onChange={updateFontSetting}
+                      />
                     </TabsContent>
 
                     <TabsContent value="emoji" className="mt-0">
@@ -228,32 +287,31 @@ export default function App() {
               </div>
             </div>
           </div>
-          </div>
         </div>
+      </div>
 
-          <br></br>
-          <p className="text-red-500 text-xs text-center">
-            • Copyright ©{" "}
-            <a
-              href="http://erroneous.biz"
-              target="_blank"
-              className="text-black hover:text-blue-500 hover:underline"
-            >
-              Erroneous Designs
-            </a>{" "}
-            2026 • All Rights Reserved ®{" "}
-            <a
-              href="http://erroneous.biz"
-              target="_blank"
-              className="text-purple-500 hover:text-green-500 hover:underline"
-            >
-              Erroneous Holdings LLC
-            </a>{" "}
-            •<br></br>• (- Designing Your World, Your Way!™ -)
-            •
-          </p>
+      <br></br>
+      <p className="text-red-500 text-xs text-center">
+        • Copyright ©{" "}
+        <a
+          href="http://erroneous.biz"
+          target="_blank"
+          className="text-black hover:text-blue-500 hover:underline"
+        >
+          Erroneous Designs
+        </a>{" "}
+        2026 • All Rights Reserved ®{" "}
+        <a
+          href="http://erroneous.biz"
+          target="_blank"
+          className="text-purple-500 hover:text-green-500 hover:underline"
+        >
+          Erroneous Holdings LLC
+        </a>{" "}
+        •<br></br>• (- Designing Your World, Your Way!™ -) •
+      </p>
 
-        <br></br>
+      <br></br>
       <br></br>
     </div>
   );
