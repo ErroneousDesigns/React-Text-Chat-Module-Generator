@@ -155,15 +155,15 @@ export default function App() {
               </CardHeader>
               <CardContent>
                 <Tabs defaultValue="room" className="w-full">
-                  <TabsList className="grid w-full grid-cols-5 mb-6">
-                    <TabsTrigger value="room">Room Configure</TabsTrigger>
+                  <TabsList className="grid h-full w-full grid-cols-5 mb-6">
+                    <TabsTrigger value="room">Room</TabsTrigger>
                     <TabsTrigger value="moderation">Moderation</TabsTrigger>
                     <TabsTrigger value="translation">Translation</TabsTrigger>
                     <TabsTrigger value="fonts">Fonts</TabsTrigger>
                     <TabsTrigger value="emoji">Emoji's</TabsTrigger>
                   </TabsList>
 
-                  <ScrollArea className="h-[calc(100vh-320px)] pr-4">
+                  <ScrollArea className="h-full pr-4">
                     <TabsContent value="room" className="mt-0">
                       <RoomSettings settings={roomSettings} onChange={updateRoomSetting} />
                     </TabsContent>
@@ -228,8 +228,33 @@ export default function App() {
               </div>
             </div>
           </div>
+          </div>
         </div>
-      </div>
+
+          <br></br>
+          <p className="text-red-500 text-xs text-center">
+            • Copyright ©{" "}
+            <a
+              href="http://erroneous.biz"
+              target="_blank"
+              className="text-black hover:text-blue-500 hover:underline"
+            >
+              Erroneous Designs
+            </a>{" "}
+            2026 • All Rights Reserved ®{" "}
+            <a
+              href="http://erroneous.biz"
+              target="_blank"
+              className="text-purple-500 hover:text-green-500 hover:underline"
+            >
+              Erroneous Holdings LLC
+            </a>{" "}
+            •<br></br>• (- Designing Your World, Your Way!™ -)
+            •
+          </p>
+
+        <br></br>
+      <br></br>
     </div>
   );
 }
